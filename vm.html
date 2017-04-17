@@ -34,13 +34,9 @@
 		var title = qs.substring((qs.indexOf(secTi) + secTi.length), qs.indexOf("&"))
 		$("#title").text("Yoo视频直连-"+title);
 		
-		alert(title);
-		
 		var right = qs.substring(qs.indexOf("&")+1,qs.length);
-		var poster = right.substring(0,right.indexOf("&"));
+		var poster = right.substring(right.indexOf(secPo)+secPo.length,right.indexOf("&"));
 		$("#pa_poster").val(poster);
-		
-		alert(poster);
 	}
   </script>
  <body>
