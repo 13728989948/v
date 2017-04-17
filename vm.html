@@ -25,18 +25,17 @@
   <script>
     $("#pa_videoWi").val(document.body.clientWidth);
     $("#pa_videoHi").val(document.body.clientHeight);
-	if (location.search.length > 0) {
-		var hr = location.href;
-		var qs = hr.substring(hr.indexOf("?")+1, hr.length);// 获取查询字符串参数,去除该字符串问号开关符号
-		var secTi = "title=";
-		var secPo = "poster=";
-		
-		var title = qs.substring((qs.indexOf(secTi) + secTi.length), qs.indexOf("&"))
-		$("#title").text("Yoo视频直连-"+title);
-		
-		var right = qs.substring(qs.indexOf("&")+1,qs.length);
-		var poster = right.substring(right.indexOf(secPo)+secPo.length,right.indexOf("&"));
-		$("#pa_poster").val(poster);
+	var hr = location.href;
+	var secPa = "title=";
+	var secTi = "title=";
+	var secPo = "poster=";
+	if(hr&&hr.indexOf(secPa)!=-1&&hr.indexOf(secTi)!=-1&&hr.indexOf(secPo)!=-1){
+  		var qs = hr.substring(hr.indexOf("?")+1, hr.length);
+  		var title = qs.substring((qs.indexOf(secTi) + secTi.length), qs.indexOf("&"))
+  		$("#title").text("Yoo视频直连-"+title);
+  		var right = qs.substring(qs.indexOf("&")+1,qs.length);
+  		var poster = right.substring(right.indexOf(secPo)+secPo.length,right.indexOf("&"));
+  		$("#pa_poster").val(poster);
 	}
   </script>
  <body>
