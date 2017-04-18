@@ -24,8 +24,8 @@
       <file leaf-file-name="vs.bo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/vs.bo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8331126">
-              <caret line="340" column="27" selection-start-line="340" selection-start-column="27" selection-end-line="340" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.2781457">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,8 +42,8 @@
         <option value="$PROJECT_DIR$/vs.html" />
         <option value="$PROJECT_DIR$/js/vs.bo.old.js" />
         <option value="$PROJECT_DIR$/js/vs.js" />
-        <option value="$PROJECT_DIR$/js/vs.bo.js" />
         <option value="$PROJECT_DIR$/css/vs.css" />
+        <option value="$PROJECT_DIR$/js/vs.bo.js" />
       </list>
     </option>
   </component>
@@ -246,7 +246,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21822916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -302,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/vs.bo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8331126">
-          <caret line="340" column="27" selection-start-line="340" selection-start-column="27" selection-end-line="340" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.2781457">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
