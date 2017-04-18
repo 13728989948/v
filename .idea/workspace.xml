@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85c73cd8-3124-4a0a-a050-0e5f535d1d0c" name="Default" comment="">
-      <change type="MOVED" beforePath="D:\workspacejava\bStPro\v\css\vm.css" afterPath="$PROJECT_DIR$/css/vs.css" />
-      <change type="MOVED" beforePath="D:\workspacejava\bStPro\v\js\vm.bo.js" afterPath="$PROJECT_DIR$/js/vs.bo.js" />
-      <change type="MOVED" beforePath="D:\workspacejava\bStPro\v\js\vm.js" afterPath="$PROJECT_DIR$/js/vs.js" />
-      <change type="MOVED" beforePath="D:\workspacejava\bStPro\v\vm.html" afterPath="$PROJECT_DIR$/vs.html" />
+      <change type="DELETED" beforePath="D:\workspacejava\bStPro\v\js\need\layer.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/vs.bo.js" afterPath="$PROJECT_DIR$/js/vs.bo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vs.css" afterPath="$PROJECT_DIR$/css/vs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vs.html" afterPath="$PROJECT_DIR$/vs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="v.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="vs.bo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/vs.bo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.80529803">
-              <caret line="239" column="29" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.69403976">
+              <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -44,8 +45,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/vs.bo.js" />
         <option value="$PROJECT_DIR$/vs.html" />
+        <option value="$PROJECT_DIR$/js/vs.bo.old.js" />
+        <option value="$PROJECT_DIR$/js/vs.js" />
+        <option value="$PROJECT_DIR$/js/vs.bo.js" />
+        <option value="$PROJECT_DIR$/css/vs.css" />
       </list>
     </option>
   </component>
@@ -168,24 +172,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="need" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -215,6 +201,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspacejava\bStPro\v\js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -291,14 +282,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/vs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33245033">
-          <caret line="187" column="9" selection-start-line="187" selection-start-column="9" selection-end-line="187" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7241379">
@@ -307,10 +290,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/vs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3602649">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/vs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.826685">
+          <caret line="0" column="12680" selection-start-line="0" selection-start-column="12680" selection-end-line="0" selection-end-column="12680" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/vs.bo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80529803">
-          <caret line="239" column="29" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.69403976">
+          <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
           <folding />
         </state>
       </provider>

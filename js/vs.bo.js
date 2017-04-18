@@ -7,13 +7,9 @@ function wrap_DmVideoVs() {
     DmVideoVs.startMethod();// 开始方法
 }
 
-/** DmVideo公共类***************************************************************************************** */
-var ajaxCkIsCanPlayJb = null;// 请求检查视频是否可播放句柄
-var ajaxAddHyPlViReJb = null;// 请求增加会员播放视频记录句柄
-var isAddingPlViRecord = false;// 是否正在增加会员播放视频记录
-
 var mapViCanPlay = new Map();// 视频能否播放Map(Key为:视频Id,Value为:是否能播放和提示信息属性)
 var mapViTimeUpdate = new Map();// 视频播放时间轴变化Map(Key为:视频Id,Value为:时间轴变化属性)
+var isAddingPlViRecord = false;// 是否正在增加会员播放视频记录
 
 var DmVideoGl = (function (DmVideoGl) {
 
@@ -82,29 +78,39 @@ var DmVideoGlInp = (function (DmVideoGlInp) {
 
     // [inp]检查会员是否可播放该视频
     DmVideoGlInp.ckIsCanPlay = function (videoId, sucCallBk, failCallBk) {
-
-        // 请求全部视频数据
-        var url = getActionByHz("action/hySe/prHyUserVi/ckIsCanPlayAjax?id=" + videoId);
+        var url = getActionByHz("action/hySe/prHyUserVi/ckIsCanPlayAjax?id=" + videoId + "&daType=jsonp");
 
         // 开始请求视频数据
-        ajaxCkIsCanPlayJb = $.post(url, {}, function (data) {
-            sucCallBk && sucCallBk(data);
-        }).error(function (e) {
-            failCallBk && failCallBk(e);
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "jsonp",
+            jsonpCallback: "jpc",
+            success: function (result) {
+                sucCallBk && sucCallBk(result);
+            },
+            error: function (e) {
+                failCallBk && failCallBk(e);
+            }
         });
     };
 
     // [inp]增加会员播放视频记录
     DmVideoGlInp.addHyPlayViRecord = function (videoId, sucCallBk, failCallBk) {
-
-        // 请求全部视频数据
-        var url = getActionByHz("action/hySe/prHyUserVi/addPlayViRecordAjax?id=" + videoId);
+        var url = getActionByHz("action/hySe/prHyUserVi/addPlayViRecordAjax?id=" + videoId + "&daType=jsonp");
 
         // 开始请求视频数据
-        ajaxAddHyPlViReJb = $.post(url, {}, function (data) {
-            sucCallBk && sucCallBk(data);
-        }).error(function (e) {
-            failCallBk && failCallBk(e, videoId);
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "jsonp",
+            jsonpCallback: "jpc",
+            success: function (result) {
+                sucCallBk && sucCallBk(result);
+            },
+            error: function (e) {
+                failCallBk && failCallBk(e, videoId);
+            }
         });
     };
 
@@ -122,12 +128,11 @@ var DmVideoVs = (function (DmVideoVs) {
 
     // 获取右侧片段(根据分割符截取)
     DmVideoVs.getSubRiSec = function (str, fg) {
-        var result = str.substring(str.indexOf(fg) + 1, str.length);
-        return result;
+        return str.substring(str.indexOf(fg) + 1, str.length);
     };
 
     // 处理单个视频
-    DmVideoVs.startClSinVideo = function (callBk) {
+    DmVideoVs.startClSinVideo = function () {
         var id = $.trim($("#pa_id").val());// 视频Id
         var viUrl = $.trim($("#pa_url").val());// 视频Url
         var videoWi = $.trim($("#pa_videoWi").val());// 指定视频的宽度
@@ -162,7 +167,7 @@ var DmVideoVs = (function (DmVideoVs) {
         var videoDom = $("#" + videoYsId);
 
         // 开始绑定Mp插件
-        var mlpObj = DmVideoVs.startBindMp(videoYsId, videoDom, poster);
+        var mlpObj = DmVideoVs.startBindMp(videoYsId, videoDom);
 
         // 若没有poster的话->加载视频
         if (!poster) {
@@ -172,14 +177,14 @@ var DmVideoVs = (function (DmVideoVs) {
     };
 
     // 开始绑定Mp插件
-    DmVideoVs.startBindMp = function (videoYsId, videoDom, poster) {
+    DmVideoVs.startBindMp = function (videoYsId, videoDom) {
 
         // 定义,初始化
         var isIPhone = browser.platform.iPhone;// 是否为IPhone
         var pauseOtherPlayers = isIPhone ? true : false;
 
         // 绑定Mp
-        var mlpObj = videoDom.mediaelementplayer({
+        return videoDom.mediaelementplayer({
             playText: "点击进行播放",
             iceFullScreenMod: "wefs",// 全屏模式(wefs:webkitEnterFullscreen(大全屏),cont:container(容器内(默认方式)))(这个属性是ice修改源码添加的)
             pauseOtherPlayers: pauseOtherPlayers,// 当播放一个视频时是否停止其他视频(PC有效)
@@ -236,7 +241,6 @@ var DmVideoVs = (function (DmVideoVs) {
                             var messageCode = data.messageCode;
                             if (messageCode == "mustCz") {
                                 alertVipLiSmPop("立即充值", data.messageContent);
-                                return;
                             }
                         }
                     }, function () {
@@ -278,6 +282,7 @@ var DmVideoVs = (function (DmVideoVs) {
 
                             // [inp]增加会员播放视频记录
                             DmVideoGlInp.addHyPlayViRecord(videoDataIdInt, function (data) {
+
                                 isAddingPlViRecord = false;
 
                                 var isSuccess = data.isSuccess;
@@ -310,7 +315,6 @@ var DmVideoVs = (function (DmVideoVs) {
                 console.error(e);
             }
         });
-        return mlpObj;
     };
 
     // 获取移动端视频宽度片段
@@ -328,11 +332,7 @@ var DmVideoVs = (function (DmVideoVs) {
             if (locStViHeight) {
                 return locStViHeight;
             } else {
-                // (iphone6s plus)电池栏高度为20px,浏览器地址栏高度为56px
-                var dclRem = getRemValByPx(76);// 电池栏区高度(rem)
-                var topSec = getPxValByRem(dclRem);// 电池栏区高度(px)
-                var height = (window.screen.height - topSec) / 3;
-                return height;
+                return document.body.clientHeight;
             }
         }
     };
